@@ -2,9 +2,12 @@
 
 <span class="badges" align="center">
 [![Build Status](https://travis-ci.org/luismayta/zsh-git-aliases.svg)](https://travis-ci.org/luismayta/zsh-git-aliases)
+[![Code Climate](https://codeclimate.com/github/luismayta/zsh-git-aliases/badges/gpa.svg)](https://codeclimate.com/github/luismayta/zsh-git-aliases)
 [![Stories in Ready](https://badge.waffle.io/luismayta/zsh-git-aliases.svg?label=ready&title=Ready)](http://waffle.io/luismayta/zsh-git-aliases)
 [![GitHub issues](https://img.shields.io/github/issues/luismayta/zsh-git-aliases.svg)](https://github.com/luismayta/zsh-git-aliases/issues)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](LICENSE)
+[![Test Coverage](https://codeclimate.com/github/luismayta/zsh-git-aliases/badges/coverage.svg)](https://codeclimate.com/github/luismayta/zsh-git-aliases/coverage)
+[![Issue Count](https://codeclimate.com/github/luismayta/zsh-git-aliases/badges/issue_count.svg)](https://codeclimate.com/github/luismayta/zsh-git-aliases)
 </span>
 
 ## Installation
