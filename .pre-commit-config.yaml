@@ -60,5 +60,6 @@
     sha: 1.0.0
     hooks:
     -   id: shell-lint
+        exclude: ^tf|-|\.(bash|kash)$
         args:
         - --external-sources
