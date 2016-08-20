@@ -5,7 +5,8 @@ This file uses change log convention from [Keep a CHANGELOG](http://keepachangel
 ## [Unreleased][unreleased]
 
 
-[unreleased]: https://github.com/luismayta/zsh-git-aliases/compare/0.0.1...HEAD
+[unreleased]: https://github.com/luismayta/zsh-git-aliases/compare/0.0.2...HEAD
+[0.0.2]: https://github.com/luismayta/zsh-git-aliases/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/luismayta/zsh-git-aliases/compare/0.0.0...0.0.1
 
 [CONTRIBUTING.md]: CONTRIBUTING.md
