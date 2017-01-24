@@ -9,6 +9,9 @@ tmux_options: -2
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
 
+pre:
+    - make environment
+
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
 
@@ -49,8 +52,10 @@ windows:
             - pyenv activate zsh-git-aliases
         - mysql:
             - pyenv activate zsh-git-aliases
-  - vagrant:
+  - docker:
       layout: main-vertical
       panes:
-        - postgresql:
+        - code:
+            - pyenv activate zsh-git-aliases
+        - code:
             - pyenv activate zsh-git-aliases
