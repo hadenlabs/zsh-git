@@ -26,8 +26,12 @@ echo "plugins+=(git-aliases)" >> ~/.zshrc
 
 (Once you have this plugin, you can clone this plugin via `clone peterhurford git-aliases.zsh` instead.  Much better!)
 
-### Antigen
-If you're using the [Antigen](https://github.com/zsh-users/antigen) framework for ZSH, all you have to do is add `antigen bundle peterhurford/git-aliases.zsh` to your `.zshrc` wherever you're adding your other antigen bundles. Antigen will automatically clone the repo and add it to your antigen configuration the next time you open a new shell.
+### [Antigen](https://github.com/zsh-users/antigen)
+If you're using the Antigen framework for ZSH, all you have to do is add `antigen bundle peterhurford/git-aliases.zsh` to your `.zshrc` wherever you're adding your other antigen bundles. Antigen will automatically clone the repo and add it to your antigen configuration the next time you open a new shell.
+
+### [Antibody](https://github.com/getantibody/antibody)
+If you're using the Antibody framework for ZSH, all you have to do is add
+`antibody bundle peterhurford/git-aliases.zsh` to your `.zshrc`.
 
 ### Bash
 If you use the non-recommended alternative, bash, you can install this directly to you
