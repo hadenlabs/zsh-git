@@ -1,0 +1,11 @@
+version: '2'
+services:
+
+  alias:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: alias
+    restart: always
+    image: luismayta/ubuntu-dotfiles:latest
+    env_file: .env
