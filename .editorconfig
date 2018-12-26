@@ -1,28 +1,45 @@
-# http://editorconfig.org
-root                     = true
 
+# EditorConfig is awesome: http://EditorConfig.org
+
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
 [*]
-indent_style             = space
-indent_size              = 2
-end_of_line              = lf
+end_of_line = lf
+insert_final_newline = false
+indent_style = space
+# Set default charset
+charset = utf-8
 trim_trailing_whitespace = true
-charset                  = utf-8
-insert_final_newline     = false
 
-[*.{py,sh,sql}]
-max_line_length          = 80
+[*.{el}]
+insert_final_newline = false
+
+[*.{el,md,yml,yaml,js,json}]
+indent_style = space
+indent_size = 2
+
+# 4 space indentation
+[*.{py}]
+indent_style = space
+indent_size = 4
+
+# Minified JavaScript files shouldn't be changed
+[**.min.js]
+indent_style = ignore
+insert_final_newline = ignore
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
 indent_size              = 4
 
-[*.md]
-max_line_length          = 80
-trim_trailing_whitespace = false
-
-# Tabs
-[*.{less,css}]
+[*.{make,mk}]
 indent_style             = tab
+indent_size              = 4
 
-[Vagrantfile]
-indent_style             = tab
-
-[Makefile]
-indent_style             = tab
+# Batch files use tabs for indentation
+[*.bat]
+indent_style = tab
