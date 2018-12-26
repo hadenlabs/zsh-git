@@ -8,6 +8,9 @@ This file uses change log convention from `keep a CHANGELOG`_.
 `Unreleased`_
 +++++++++++++
 
+`0.1.0`_ - 2018-12-26
+++++++++++++++++++++++
+
 `0.0.3`_ - 2018-12-25
 ++++++++++++++++++++++
 
@@ -18,7 +21,8 @@ This file uses change log convention from `keep a CHANGELOG`_.
 ++++++++++++++++++++++
 
 
-.. _`Unreleased`: https://github.com/luismayta/zsh-git-aliases/compare/0.0.3...HEAD
+.. _`Unreleased`: https://github.com/luismayta/zsh-git-aliases/compare/0.1.0...HEAD
+.. _`0.1.0`: https://github.com/luismayta/zsh-git-aliases/compare/0.0.3...0.1.0
 .. _`0.0.3`: https://github.com/luismayta/zsh-git-aliases/compare/0.0.2...0.0.3
 .. _`0.0.2`: https://gitlab.com/luismayta/zsh-git-aliases/compare/0.0.1...0.0.2
 .. _`0.0.1`: https://gitlab.com/luismayta/zsh-git-aliases/compare/0.0.0...0.0.1
