@@ -1,11 +1,17 @@
-version: '2'
+# Docker Compose
+# https://docs.docker.com/compose/
+# Usage: docker-compose up
+---
+version: "3"
 services:
 
-  alias:
+  app:
     build:
       context: .
-      dockerfile: Dockerfile
-    hostname: alias
-    restart: always
-    image: luismayta/ubuntu-dotfiles:latest
-    env_file: .env
+      dockerfile: provision/docker/app/Dockerfile
+    environment: &environment
+      - STAGE=local
+    volumes:
+      - .:/usr/src
+    env_file:
+      - .env
