@@ -1,7 +1,17 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
-# Git
+#
+# Defines peco git alias and provides easy command line.
+#
+# Requirements:
+#  - peco: https://github.com/peco/peco
+#  - zsh: https://www.zsh.org/
+#  - git: https://git-scm.com/
+#
+# Authors:
+#   Luis Mayta <slovacus@gmail.com>
+#
 
 alias gst='git status'
 alias gl='git pull'
@@ -25,3 +35,19 @@ alias gf='git flow'
 alias gff='git flow feature'
 alias gfr='git flow release'
 alias gfh='git flow hotfix'
+
+if (( $+commands[peco] )); then
+    function git-branches () {
+        git branch --list --no-color | colrm 1 2
+    }
+    function peco-git-checkout () {
+        fc -l -n 1 | git-branches | \
+            peco --layout=bottom-up --query "$LBUFFER"| xargs git checkout
+
+        CURSOR=$#BUFFER # move cursor
+        zle -R -c       # refresh
+    }
+    zle -N peco-git-checkout
+    bindkey "^bco" peco-git-checkout
+    alias gb=peco-git-checkout
+fi
