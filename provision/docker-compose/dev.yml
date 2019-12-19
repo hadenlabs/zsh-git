@@ -1,27 +1,24 @@
 # Docker Compose
 # https://docs.docker.com/compose/
-
-version: "3"
+version: '3.6'
 services:
   # Python
   app:
     environment: &environment
       - STAGE=local
-    image: zsh-git-aliases-app-dev:0.1.0
+    image: zsh-git-aliases-app-dev
     build:
       args:
         stage: dev
-        version: 0.1.0
 
   check:
-    image: zsh-git-aliases-check-dev:0.1.0
+    image: zsh-git-aliases-check-dev
     environment: *environment
     build:
       context: .
       dockerfile: provision/docker/check/Dockerfile
       args:
         stage: dev
-        version: 0.1.0
     volumes:
       - .:/usr/src
     env_file:
