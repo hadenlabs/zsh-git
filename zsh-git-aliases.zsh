@@ -36,11 +36,11 @@ alias gff='git flow feature'
 alias gfr='git flow release'
 alias gfh='git flow hotfix'
 
-if (( $+commands[peco] )); then
-    function git-branches () {
+if type -p peco > /dev/null; then
+    function git-branches {
         git branch --list --no-color | colrm 1 2
     }
-    function peco-git-checkout () {
+    function peco-git-checkout {
         fc -l -n 1 | git-branches | \
             peco --layout=bottom-up --query "$LBUFFER"| xargs git checkout
 
