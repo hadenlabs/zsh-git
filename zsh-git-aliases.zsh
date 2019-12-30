@@ -13,7 +13,6 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
-alias gst='git status'
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff | mate'
