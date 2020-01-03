@@ -73,18 +73,19 @@ install this plugin by doing the following:
 3. Enjoy!
 
 Quick Start
-===========
+-----------
 
 - Fork this repository
 
 Usage
------
+^^^^^
 
 - Install dependences
 
 .. code-block:: bash
 
   λ make setup
+
 
 Support
 -------
