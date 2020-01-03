@@ -48,9 +48,7 @@ function gff {
 
     if [ -n "${action}" ] && [[ "${action_excluded}" -eq 0 ]] && [[ "${branch_eq_action}" -eq 1 ]]; then
         git flow feature publish "${action}"
-    fi
-
-    if [ -n "${action}" ] && [[ "${action_excluded}" -eq 0 ]] && [[ "${branch_name}" -eq 0 ]]; then
+    elif [ -n "${action}" ] && [[ "${action_excluded}" -eq 0 ]] && [[ "${branch_eq_action}" -eq 0 ]]; then
         git flow feature start "${action}"
     fi
 
