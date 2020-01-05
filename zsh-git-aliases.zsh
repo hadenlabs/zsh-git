@@ -15,7 +15,6 @@
 
 alias gl='git pull'
 alias gp='git push'
-alias gd='git diff | mate'
 alias gau='git add --update'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
@@ -58,6 +57,19 @@ function gff {
 
 }
 
+function git::dependences::install {
+    if ! type -p brew > /dev/null; then
+        message_warning "please install brew to continue or add zshrc luismayta/zsh-brew"
+    else
+        if ! type -p hub > /dev/null; then
+            message_info "Installing hub"
+            brew install hub
+            message_success "Installed hub"
+        fi
+    fi
+
+}
+
 if type -p peco > /dev/null; then
     function git-branches {
         git branch --list --no-color | colrm 1 2
@@ -66,6 +78,7 @@ if type -p peco > /dev/null; then
         fc -l -n 1 | git-branches | \
             peco --layout=bottom-up --query "$LBUFFER"| xargs git checkout
 
+        # shellcheck disable=SC2034  # Unused variables left for readability
         CURSOR=$#BUFFER # move cursor
         zle -R -c       # refresh
     }
@@ -73,3 +86,5 @@ if type -p peco > /dev/null; then
     bindkey "^bco" peco-git-checkout
     alias gb=peco-git-checkout
 fi
+
+git::dependences::install
