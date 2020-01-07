@@ -16,6 +16,26 @@ ZSH_GIT_ALIASES_ROOT_PATH=$(dirname "${0}")
 ZSH_GIT_ALIASES_HOOKS_PATH="${ZSH_GIT_ALIASES_ROOT_PATH}/src/git/hooks/"
 ZSH_GIT_REGEX_IS_HOOK="^(prepare-commit-msg)"
 
+GITHUB_USER="$(git config github.user)"
+BITBUCKET_USER="$(git config bitbucket.user)"
+GITLAB_USER="$(git config gitlab.user)"
+
+function git::dependences::check {
+    if [ -z "${GITHUB_USER}" ]; then
+        message_warning "You should set 'git config --global github.user'."
+    fi
+
+    if [ -z "${BITBUCKET_USER}" ]; then
+        message_warning "You should set 'git config --global bitbucket.user'."
+    fi
+
+    if [ -z "${GITLAB_USER}" ]; then
+        message_warning "You should set 'git config --global gitlab.user'."
+    fi
+}
+
+
+
 # exist_hook: validate when exist hook in path src/git/hooks
 function git::exist_hook {
     local hook_name
