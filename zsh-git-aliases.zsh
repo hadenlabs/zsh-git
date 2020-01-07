@@ -21,23 +21,26 @@ ZSH_GIT_REGEX_IS_HOOK="^(prepare-commit-msg)"
 function git::exist_hook {
     local hook_name
     hook_name="${1}"
-    return "$(echo "${hook_name}" | grep -cE "${ZSH_GIT_REGEX_IS_HOOK}")"
+    echo -e "$(echo "${hook_name}" | grep -cE "${ZSH_GIT_REGEX_IS_HOOK}")"
 }
 
 # has_hook: validate if have installed hook
 function git::has_hook {
     local hook_name
     hook_name="${1}"
-    [ -e .git/hooks/"${hook_name}" ] && return 1
-    return 0
+    if [ -e .git/hooks/"${hook_name}" ]; then
+        echo -e 1
+    fi
 }
 
 # copy_hook: copy a hook to project git
 function git::copy_hook {
     local hook_name
+    local has_hook
     hook_name="${1}"
-    if [ "$(git::exist_hook "${hook_name}")" -eq 1 ]; then
-        [ -e .git/hooks ] && cp -rf "${ZSH_GIT_ALIASES_HOOKS_PATH}/${1}" .git/hooks/
+    has_hook=$(git::exist_hook "${hook_name}")
+    if [ "${has_hook}" -eq 1 ]; then
+        [ -e .git/hooks ] && cp -rf "${ZSH_GIT_ALIASES_HOOKS_PATH}/${hook_name}" .git/hooks/
         message_success "copy hook ${hook_name}"
     else
         message_warning "not found hook ${hook_name}"
