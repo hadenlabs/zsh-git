@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 
 #
-# Defines peco git alias and provides easy command line.
+# Defines git alias and provides easy command line.
 #
 # Requirements:
-#  - peco: https://github.com/peco/peco
 #  - zsh: https://www.zsh.org/
 #  - git: https://git-scm.com/
 #
@@ -113,22 +112,5 @@ function git::dependences::install {
     fi
 
 }
-
-if type -p peco > /dev/null; then
-    function git-branches {
-        git branch --list --no-color | colrm 1 2
-    }
-    function peco-git-checkout {
-        fc -l -n 1 | git-branches | \
-            peco --layout=bottom-up --query "$LBUFFER"| xargs git checkout
-
-        # shellcheck disable=SC2034  # Unused variables left for readability
-        CURSOR=$#BUFFER # move cursor
-        zle -R -c       # refresh
-    }
-    zle -N peco-git-checkout
-    bindkey "^bco" peco-git-checkout
-    alias gb=peco-git-checkout
-fi
 
 git::dependences::install
