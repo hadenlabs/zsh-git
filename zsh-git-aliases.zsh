@@ -34,8 +34,6 @@ function git::dependences::check {
     fi
 }
 
-
-
 # exist_hook: validate when exist hook in path src/git/hooks
 function git::exist_hook {
     local hook_name
@@ -94,14 +92,20 @@ alias gf='git flow'
 alias gfr='git flow release'
 alias gfh='git flow hotfix'
 
+function git::branch::name {
+    local branch_name
+    branch_name="$(git symbolic-ref --short HEAD)"
+    branch_name="${branch_name##*/}"
+    echo "${branch_name}"
+}
+
 function gff {
     local action
     local branch_name
     local branch_eq_action
     local action_to_skip=(publish start)
     local action_excluded
-    branch_name=$(git symbolic-ref --short HEAD)
-    branch_name="${branch_name##*/}"
+    branch_name="$(git::branch::name)"
     action="${1}"
     action_excluded=$(printf "%s\\n" "${action_to_skip[@]}" | grep -c "^${action}")
     branch_eq_action=$(printf "%s" "${branch_name}" | grep -c "${action}")
