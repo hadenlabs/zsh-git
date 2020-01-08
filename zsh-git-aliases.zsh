@@ -21,9 +21,6 @@ GITHUB_USER="$(git config github.user)"
 BITBUCKET_USER="$(git config bitbucket.user)"
 GITLAB_USER="$(git config gitlab.user)"
 
-REMOTE_ORIGIN_URL="$(git remote get-url "origin" 2>/dev/null || echo)"
-REMOTE_UPSTREAM_URL="$(git remote get-url "upstream" 2>/dev/null || echo)"
-
 function git::dependences::check {
     if [ -z "${GITHUB_USER}" ]; then
         message_warning "You should set 'git config --global github.user'."
@@ -42,7 +39,7 @@ function git::dependences::check {
 function git::exist_hook {
     local hook_name
     hook_name="${1}"
-    echo -e "$(echo "${hook_name}" | grep -cE "${ZSH_GIT_REGEX_IS_HOOK}")"
+    echo "${hook_name}" | grep -cE "${ZSH_GIT_REGEX_IS_HOOK}"; echo
 }
 
 # has_hook: validate if have installed hook
@@ -109,22 +106,32 @@ function git::branch::task_name {
     echo "${branch_name}"
 }
 
+# git::repository::remote::url -> string
+# input remote_name
+## return url of repository remote
+function git::repository::remote::url {
+    local remote_name
+    remote_name="${1}"
+    git remote get-url "${remote_name}" 2>/dev/null || echo; echo
+}
+
 # git::repository::fork::private
 #  return true when origign is different to upstream
 function git::repository::fork::private {
     local domain_origin
     local domain_upstream
-    if [ -z "${REMOTE_UPSTREAM_URL}" ]; then
+    domain_origin=$(echo "$(git::repository::remote::url origin)" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
+    domain_upstream=$(echo "$(git::repository::remote::url upstream)" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
+    if [ -z "${domain_upstream}" ]; then
         echo 0
-    else
-        domain_origin=$(echo "${REMOTE_ORIGIN_URL}" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
-        domain_upstream=$(echo "${REMOTE_UPSTREAM_URL}" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
-        if [ "${domain_origin}" == "${domain_upstream}" ]; then
-            echo 1
-        else
-            echo 0
-        fi
+        return
     fi
+
+    if [ "${domain_origin}" != "${domain_upstream}" ]; then
+        echo 1
+        return
+    fi
+    echo 0
 }
 
 function gff::publish {
@@ -172,7 +179,6 @@ function git::dependences::install {
             message_success "Installed hub"
         fi
     fi
-
 }
 
 git::dependences::install
