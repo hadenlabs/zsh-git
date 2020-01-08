@@ -15,10 +15,14 @@
 ZSH_GIT_ALIASES_ROOT_PATH=$(dirname "${0}")
 ZSH_GIT_ALIASES_HOOKS_PATH="${ZSH_GIT_ALIASES_ROOT_PATH}/src/git/hooks/"
 ZSH_GIT_REGEX_IS_HOOK="^(prepare-commit-msg)"
+ZSH_GIT_REGEX_DOMAIN_ENABLED="(github.com|bitbucket.org)"
 
 GITHUB_USER="$(git config github.user)"
 BITBUCKET_USER="$(git config bitbucket.user)"
 GITLAB_USER="$(git config gitlab.user)"
+
+REMOTE_ORIGIN_URL="$(git remote get-url "origin" 2>/dev/null || echo)"
+REMOTE_UPSTREAM_URL="$(git remote get-url "upstream" 2>/dev/null || echo)"
 
 function git::dependences::check {
     if [ -z "${GITHUB_USER}" ]; then
@@ -105,6 +109,34 @@ function git::branch::task_name {
     echo "${branch_name}"
 }
 
+# git::repository::fork::private
+#  return true when origign is different to upstream
+function git::repository::fork::private {
+    local domain_origin
+    local domain_upstream
+    if [ -z "${REMOTE_UPSTREAM_URL}" ]; then
+        echo 0
+    else
+        domain_origin=$(echo "${REMOTE_ORIGIN_URL}" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
+        domain_upstream=$(echo "${REMOTE_UPSTREAM_URL}" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
+        if [ "${domain_origin}" == "${domain_upstream}" ]; then
+            echo 1
+        else
+            echo 0
+        fi
+    fi
+}
+
+function gff::publish {
+    local branch_name
+    branch_name="$(git::branch::name)"
+    if [ "$(git::repository::fork::private)" -eq 1 ]; then
+        git push upstream "${branch_name}"
+    else
+        git push origin "${branch_name}"
+    fi
+}
+
 function gff {
     local action
     local branch_name
@@ -119,7 +151,7 @@ function gff {
     git::hook::factory
 
     if [ -n "${action}" ] && [[ "${action_excluded}" -eq 0 ]] && [[ "${branch_eq_action}" -eq 1 ]]; then
-        git flow feature publish "${action}"
+        gff::publish
     elif [ -n "${action}" ] && [[ "${action_excluded}" -eq 0 ]] && [[ "${branch_eq_action}" -eq 0 ]]; then
         git flow feature start "${action}"
     fi
