@@ -157,7 +157,7 @@ function gff {
 
     git::hook::factory
 
-    if [ -n "${action}" ] && [[ "${action_excluded}" -eq 0 ]] && [[ "${branch_eq_action}" -eq 1 ]]; then
+    if [ -n "${action}" ] && [ "${action_excluded}" -eq 0 ] && [ "${branch_eq_action}" -eq 1 ]; then
         gff::publish
     elif [ -n "${action}" ] && [ "${action_excluded}" -eq 0 ] && [ "${branch_eq_action}" -eq 0 ]; then
         if [ "$(git::branch::name)" != "develop" ]; then
