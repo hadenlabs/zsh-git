@@ -168,7 +168,7 @@ function gff {
     if [ -n "${action}" ] && [ "${action_excluded}" -eq 0 ] && [ "${branch_eq_action}" -eq 1 ]; then
         gff::publish
     elif [ -n "${action}" ] && [ "${action_excluded}" -eq 0 ] && [ "${branch_eq_action}" -eq 0 ]; then
-        if [ "$(git::branch::name)" != "develop" ]; then
+        if [ "$(git::branch::is_develop)" -eq 0 ]; then
             message_info "starting sync branchs"
             git checkout develop
             git-sync
