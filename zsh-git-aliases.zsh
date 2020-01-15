@@ -106,6 +106,14 @@ function git::branch::task_name {
     echo "${branch_name}"
 }
 
+function git::branch::is_develop {
+    if [ "$(git::branch::name)" = "develop" ]; then
+        echo 1
+        return
+    fi
+    echo 0
+}
+
 # git::repository::remote::url -> string
 # input remote_name
 ## return url of repository remote
