@@ -54,6 +54,9 @@ function gff {
     local action_excluded
     branch_name="$(git::branch::task_name)"
     action="${1}"
+    if [ -z "${action}" ]; then
+        action="${branch_name}"
+    fi
     action_excluded=$(printf "%s\\n" "${action_to_skip[@]}" | grep -c "^${action}")
     branch_eq_action=$(printf "%s" "${branch_name}" | grep -c "${action}")
 
