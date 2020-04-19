@@ -25,10 +25,6 @@ repos:
       - id: python-bandit-vulnerability-check
         args: []
         files: .py$
-  - repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
-    rev: v1.1.1
-    hooks:
-      - id: markdown-toc
   - repo: https://github.com/Lucas-C/pre-commit-hooks-markup
     rev: v1.0.0
     hooks:
