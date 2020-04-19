@@ -50,7 +50,7 @@ function git::dependences::check {
 }
 
 function gff {
-    local action, branch_name, branch_eq_action, action_to_skip, action_excluded
+    local action branch_name branch_eq_action action_to_skip action_excluded
     action_to_skip=(publish start)
     branch_name="$(git::branch::task_name)"
     action="${1}"
