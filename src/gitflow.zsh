@@ -17,7 +17,7 @@ function gitflow::validate::is_installed {
 #
 function gitflow::validate::exist::develop {
     local response
-    response=git config --local gitflow.branch.develop | cut -d ' ' -f 2
+    response="$(git config --local gitflow.branch.develop | cut -d ' ' -f 2)"
 	  [ -n "${response}" ] && echo 1; return
     echo 0
 }
@@ -27,7 +27,7 @@ function gitflow::validate::exist::develop {
 #
 function gitflow::validate::exist::master {
     local response
-    response=git config --local gitflow.branch.master | cut -d ' ' -f 2
+    response="$(git config --local gitflow.branch.master | cut -d ' ' -f 2)"
 	  [ -n "${response}" ] && echo 1; return
     echo 0
 }
