@@ -73,7 +73,7 @@ function git::repository::remote::url {
 # git::repository::fork::private
 #  return true when origign is different to upstream
 function git::repository::fork::private {
-    local domain_origin, domain_upstream
+    local domain_origin domain_upstream
     domain_origin=$(echo "$(git::repository::remote::url origin)" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
     domain_upstream=$(echo "$(git::repository::remote::url upstream)" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
     if [ -z "${domain_upstream}" ]; then
