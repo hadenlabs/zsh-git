@@ -99,6 +99,9 @@ function gff::publish {
 }
 
 function gff::git::sync {
+    if [ -z "$(git::repository::remote::url origin)" ]; then
+        return
+    fi
     message_info "starting sync branchs"
     if [ "$(git::branch::is_develop)" -eq 0 ]; then
         git checkout develop
