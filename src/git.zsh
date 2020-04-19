@@ -26,9 +26,9 @@ function git::copy_hook {
     if [ "${has_hook}" -eq 1 ]; then
         [ -e .git/hooks ] && cp -rf "${ZSH_GIT_ALIASES_HOOKS_PATH}/${hook_name}" .git/hooks/
         message_success "copy hook ${hook_name}"
-    else
-        message_warning "not found hook ${hook_name}"
+        return
     fi
+    message_warning "not found hook ${hook_name}"
 }
 
 function git::hook::factory {
@@ -72,8 +72,7 @@ function git::repository::remote::url {
 # git::repository::fork::private
 #  return true when origign is different to upstream
 function git::repository::fork::private {
-    local domain_origin
-    local domain_upstream
+    local domain_origin, domain_upstream
     domain_origin=$(echo "$(git::repository::remote::url origin)" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
     domain_upstream=$(echo "$(git::repository::remote::url upstream)" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
     if [ -z "${domain_upstream}" ]; then
