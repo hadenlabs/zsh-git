@@ -50,11 +50,8 @@ function git::dependences::check {
 }
 
 function gff {
-    local action
-    local branch_name
-    local branch_eq_action
-    local action_to_skip=(publish start)
-    local action_excluded
+    local action, branch_name, branch_eq_action, action_to_skip, action_excluded
+    action_to_skip=(publish start)
     branch_name="$(git::branch::task_name)"
     action="${1}"
     if [ -z "${action}" ]; then
@@ -63,7 +60,7 @@ function gff {
     action_excluded=$(printf "%s\\n" "${action_to_skip[@]}" | grep -c "^${action}")
     branch_eq_action=$(printf "%s" "${branch_name}" | grep -c "${action}")
 
-    git::hook::factory
+    gitflow::setup
 
     if [ -n "${action}" ] && [ "${action_excluded}" -eq 0 ] && [ "${branch_eq_action}" -eq 1 ]; then
         gff::publish
