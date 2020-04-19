@@ -1,6 +1,8 @@
 zsh-git-aliases
 ===============
 
+Functions and tools git with zsh
+
 |Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.1.0
@@ -20,7 +22,12 @@ Features
 Dependencies
 ------------
 
-List of applications:
+.. code-block:: bash
+
+    https://github.com/mafredri/zsh-async
+    https://github.com/luismayta/zsh-notify
+    https://github.com/luismayta/zsh-functions
+
 
 Installation
 ------------
@@ -73,19 +80,18 @@ install this plugin by doing the following:
 3. Enjoy!
 
 Quick Start
------------
+===========
 
 - Fork this repository
 
 Usage
-^^^^^
+-----
 
 - Install dependences
 
 .. code-block:: bash
 
   λ make setup
-
 
 Support
 -------
@@ -141,15 +147,15 @@ Feel free to contact me to discuss any issues, questions, or comments.
 
 |linkedin| |beacon| |made|
 
-Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
+Made with :coffee: and :pizza: by `Luis Mayta`_ and `equipindustry`_.
 
 .. Links
 .. _`changelog`: CHANGELOG.rst
-.. _`contributors`: AUTHORS
+.. _`contributors`: docs/source/AUTHORS.rst
 .. _`contributing`: docs/source/CONTRIBUTING.rst
 
-.. _`hadenlabs`: https://github.com/hadenlabs
-.. _`luis mayta`: https://github.com/luismayta
+.. _`equipindustry`: https://github.com/equipindustry
+.. _`Luis Mayta`: https://github.com/luismayta
 
 
 .. _`Github`: https://github.com/luismayta
@@ -157,15 +163,15 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. _`Email`: slovacus@gmail.com
     :target: mailto:slovacus@gmail.com
 .. _`Twitter`: https://twitter.com/slovacus
-.. _`Website`: http://luismayta.github.io
+.. _`Website`: https://luismayta.github.io
 .. _`PGP`: https://keybase.io/luismayta/pgp_keys.asc
 
 .. |Build Status| image:: https://travis-ci.org/luismayta/zsh-git-aliases.svg
-   :target: https://travis-ci.org/luismayta/zsh-git-aliases
+    :target: https://travis-ci.org/luismayta/zsh-git-aliases
 .. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-git-aliases.svg
-   :target: https://github.com/luismayta/zsh-git-aliases/issues
+    :target: https://github.com/luismayta/zsh-git-aliases/issues
 .. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
-   :target: LICENSE
+    :target: LICENSE
 
 .. Team:
 .. |Luis Mayta| image:: https://github.com/luismayta.png?size=100
