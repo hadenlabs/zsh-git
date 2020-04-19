@@ -13,7 +13,8 @@ function git::has_hook {
     local hook_name
     hook_name="${1}"
     if [ -e .git/hooks/"${hook_name}" ]; then
-        echo -e 1
+        echo 1
+        return
     fi
 }
 
@@ -92,9 +93,9 @@ function gff::publish {
     branch_name="$(git::branch::name)"
     if [ "$(git::repository::fork::private)" -eq 1 ]; then
         git push upstream "${branch_name}"
-    else
-        git push origin "${branch_name}"
+        return
     fi
+    git push origin "${branch_name}"
 }
 
 function gff::git::sync {
