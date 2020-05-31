@@ -25,9 +25,9 @@ Dependencies
 .. code-block:: bash
 
     https://github.com/mafredri/zsh-async
+    https://github.com/luismayta/zsh-core
     https://github.com/luismayta/zsh-notify
     https://github.com/luismayta/zsh-functions
-
 
 Installation
 ------------
