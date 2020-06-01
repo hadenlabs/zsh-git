@@ -5,7 +5,7 @@ Functions and tools git with zsh
 
 |Build Status| |GitHub issues| |GitHub license|
 
-:Version: 0.1.0
+:Version: 0.0.0
 :Web: https://github.com/luismayta/zsh-git-aliases
 :Download: http://github.com/luismayta/zsh-git-aliases
 :Source: http://github.com/luismayta/zsh-git-aliases
