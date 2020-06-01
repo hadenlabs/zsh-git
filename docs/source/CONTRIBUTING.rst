@@ -4,7 +4,7 @@ How To Contribute
 .. contents::
    :local:
 
-Contributions to zsh-git-aliases are welcome.
+Contributions to zsh-git are welcome.
 
 Getting Started
 ---------------
@@ -140,5 +140,5 @@ Try to keep history as linear as possible using a `rebase` merge strategy.
 
 #. Delete merged Branch
 
-.. _Issue: https://github.com/luismayta/zsh-git-aliases/issues
-.. _Pull Request: https://github.com/luismayta/zsh-git-aliases/pulls
+.. _Issue: https://github.com/luismayta/zsh-git/issues
+.. _Pull Request: https://github.com/luismayta/zsh-git/pulls

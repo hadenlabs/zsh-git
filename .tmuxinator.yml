@@ -1,5 +1,5 @@
-# ~/.tmuxinator/zsh-git-aliases.yml
-name: zsh-git-aliases
+# ~/.tmuxinator/zsh-git.yml
+name: zsh-git
 root: ./
 # Optional tmux socket
 # socket_name: foo

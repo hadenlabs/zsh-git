@@ -2,7 +2,7 @@
 
 @setup {
     PATH="/bin:/usr/bin:/usr/local/bin"
-	  load ../zsh-git-aliases.zsh
+	  load ../zsh-git.zsh
 }
 
 @teardown {

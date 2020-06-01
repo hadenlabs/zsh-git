@@ -1,15 +1,15 @@
-zsh-git-aliases
-===============
+zsh-git
+=======
 
 Functions and tools git with zsh
 
 |Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.0.0
-:Web: https://github.com/luismayta/zsh-git-aliases
-:Download: http://github.com/luismayta/zsh-git-aliases
-:Source: http://github.com/luismayta/zsh-git-aliases
-:Keywords: zsh-git-aliases
+:Web: https://github.com/luismayta/zsh-git
+:Download: http://github.com/luismayta/zsh-git
+:Source: http://github.com/luismayta/zsh-git
+:Keywords: zsh-git
 
 .. contents:: Table of Contents:
     :local:
@@ -42,9 +42,9 @@ plugin by doing the following:
 1. Go to your oh-my-zsh custom plugins directory -
    ``cd ~/.oh-my-zsh/custom/plugins``
 2. Clone the plugin
-   ``bash   git clone https://github.com/luismayta/zsh-git-aliases``\ bash
+   ``bash   git clone https://github.com/luismayta/zsh-git``\ bash
 3. Edit your ``.zshrc`` and add
-   ``plugins=( ... zsh-git-aliases )`` to your list of
+   ``plugins=( ... zsh-git )`` to your list of
    plugins
 4. Open a new terminal and enjoy!
 
@@ -54,10 +54,10 @@ plugin by doing the following:
 If you're using `Antigen <https://github.com/zsh-lovers/antigen>`__,
 install this plugin by doing the following:
 
-1. Add ``antigen bundle luismayta/zsh-git-aliases`` to your
+1. Add ``antigen bundle luismayta/zsh-git`` to your
    ``.zshrc`` where you're adding your other plugins.
 2. Either open a new terminal to force zsh to load the new plugin, or
-   run ``antigen bundle luismayta/zsh-git-aliases`` in a
+   run ``antigen bundle luismayta/zsh-git`` in a
    running zsh session.
 3. Enjoy!
 
@@ -71,11 +71,11 @@ install this plugin by doing the following:
 
     .. code-block:: bash
 
-        antibody bundle luismayta/zsh-git-aliases
+        antibody bundle luismayta/zsh-git
 
     to your ``.zshrc`` where you're adding your other plugins.
 2. Either open a new terminal to force zsh to load the new plugin, or
-   run ``antibody bundle luismayta/zsh-git-aliases`` in a
+   run ``antibody bundle luismayta/zsh-git`` in a
    running zsh session.
 3. Enjoy!
 
@@ -166,10 +166,10 @@ Made with :coffee: and :pizza: by `Luis Mayta`_ and `equipindustry`_.
 .. _`Website`: https://luismayta.github.io
 .. _`PGP`: https://keybase.io/luismayta/pgp_keys.asc
 
-.. |Build Status| image:: https://travis-ci.org/luismayta/zsh-git-aliases.svg
-    :target: https://travis-ci.org/luismayta/zsh-git-aliases
-.. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-git-aliases.svg
-    :target: https://github.com/luismayta/zsh-git-aliases/issues
+.. |Build Status| image:: https://travis-ci.org/luismayta/zsh-git.svg
+    :target: https://travis-ci.org/luismayta/zsh-git
+.. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-git.svg
+    :target: https://github.com/luismayta/zsh-git/issues
 .. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
     :target: LICENSE
 
@@ -180,8 +180,8 @@ Made with :coffee: and :pizza: by `Luis Mayta`_ and `equipindustry`_.
 .. Footer:
 .. |linkedin| image:: http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png
    :target: https://pe.linkedin.com/in/luismayta
-.. |beacon| image:: https://ga-beacon.appspot.com/UA-65019326-1/github.com/luismayta/zsh-git-aliases/readme
-   :target: https://github.com/luismayta/zsh-git-aliases
+.. |beacon| image:: https://ga-beacon.appspot.com/UA-65019326-1/github.com/luismayta/zsh-git/readme
+   :target: https://github.com/luismayta/zsh-git
 .. |made| image:: https://img.shields.io/badge/Made%20with-Zsh-1f425f.svg
    :target: http://www.zsh.org
 

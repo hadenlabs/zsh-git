@@ -12,9 +12,9 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
-ZSH_GIT_ALIASES_ROOT_PATH=$(dirname "${0}")
-export ZSH_GIT_ALIASES_SRC_PATH="${ZSH_GIT_ALIASES_ROOT_PATH}/src"
-export ZSH_GIT_ALIASES_HOOKS_PATH="${ZSH_GIT_ALIASES_SRC_PATH}/git/hooks/"
+ZSH_GIT_ROOT_PATH=$(dirname "${0}")
+export ZSH_GIT_SRC_PATH="${ZSH_GIT_ROOT_PATH}/src"
+export ZSH_GIT_HOOKS_PATH="${ZSH_GIT_SRC_PATH}/git/hooks/"
 export ZSH_GIT_REGEX_IS_HOOK="^(prepare-commit-msg)"
 export ZSH_GIT_REGEX_DOMAIN_ENABLED="(github.com|bitbucket.org)"
 
@@ -22,21 +22,21 @@ GITHUB_USER="$(git config github.user)"
 BITBUCKET_USER="$(git config bitbucket.user)"
 GITLAB_USER="$(git config gitlab.user)"
 
-export ZSH_GIT_ALIASES_MESSAGE_BREW="Please install brew or use antibody bundle luismayta/zsh-brew branch:develop"
+export ZSH_GIT_MESSAGE_BREW="Please install brew or use antibody bundle luismayta/zsh-brew branch:develop"
 
-export PATH="${ZSH_GIT_ALIASES_ROOT_PATH}/bin:${PATH}"
-
-# shellcheck source=/dev/null
-source "${ZSH_GIT_ALIASES_SRC_PATH}"/base.zsh
+export PATH="${ZSH_GIT_ROOT_PATH}/bin:${PATH}"
 
 # shellcheck source=/dev/null
-source "${ZSH_GIT_ALIASES_SRC_PATH}"/git.zsh
+source "${ZSH_GIT_SRC_PATH}"/base.zsh
 
 # shellcheck source=/dev/null
-source "${ZSH_GIT_ALIASES_SRC_PATH}"/gitflow.zsh
+source "${ZSH_GIT_SRC_PATH}"/git.zsh
 
 # shellcheck source=/dev/null
-source "${ZSH_GIT_ALIASES_SRC_PATH}"/alias.zsh
+source "${ZSH_GIT_SRC_PATH}"/gitflow.zsh
+
+# shellcheck source=/dev/null
+source "${ZSH_GIT_SRC_PATH}"/alias.zsh
 
 
 function git::dependences::check {
