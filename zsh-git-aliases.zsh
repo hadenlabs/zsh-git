@@ -22,6 +22,10 @@ GITHUB_USER="$(git config github.user)"
 BITBUCKET_USER="$(git config bitbucket.user)"
 GITLAB_USER="$(git config gitlab.user)"
 
+export ZSH_GIT_ALIASES_MESSAGE_BREW="Please install brew or use antibody bundle luismayta/zsh-brew branch:develop"
+
+export PATH="${ZSH_GIT_ALIASES_ROOT_PATH}/bin:${PATH}"
+
 # shellcheck source=/dev/null
 source "${ZSH_GIT_ALIASES_SRC_PATH}"/base.zsh
 
