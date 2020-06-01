@@ -1,10 +1,10 @@
 {
   "keywords": [],
-  "name": "@luismayta/zsh-git-aliases",
+  "name": "@luismayta/zsh-git",
   "private": true,
   "description": "git-aliases for zsh",
   "version": "0.0.0",
-  "repository": "ssh://git@github.com/luismayta/zsh-git-aliases.git",
+  "repository": "ssh://git@github.com/luismayta/zsh-git.git",
   "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "MIT",
   "scripts": {

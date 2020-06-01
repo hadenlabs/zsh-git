@@ -3,7 +3,7 @@ FROM equipindustry/python:3.8.0-slim
 MAINTAINER Luis Mayta <slovacus@gmail.com>
 
 ARG stage
-LABEL NAME zsh-git-aliases-check-$stage
+LABEL NAME zsh-git-check-$stage
 
 COPY Pipfile* /usr/src/
 
