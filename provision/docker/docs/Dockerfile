@@ -4,7 +4,7 @@ MAINTAINER Luis Mayta <slovacus@gmail.com>
 
 ARG stage
 
-LABEL NAME zsh-git-aliases-doc
+LABEL NAME zsh-git-doc
 
 ENV USERNAME developer
 
