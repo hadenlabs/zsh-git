@@ -7,13 +7,13 @@ services:
   app:
     environment: &environment
       - STAGE=local
-    image: zsh-git-aliases-app-dev
+    image: zsh-git-app-dev
     build:
       args:
         stage: dev
 
   check:
-    image: zsh-git-aliases-check-dev
+    image: zsh-git-check-dev
     environment: *environment
     build:
       context: .

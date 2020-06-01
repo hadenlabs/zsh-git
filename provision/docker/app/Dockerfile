@@ -4,7 +4,7 @@ MAINTAINER Luis Mayta <slovacus@gmail.com>
 
 ARG stage
 
-LABEL NAME zsh-git-aliases-app-$stage
+LABEL NAME zsh-git-app-$stage
 
 ENV USERNAME developer
 

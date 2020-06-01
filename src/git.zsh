@@ -25,7 +25,7 @@ function git::copy_hook {
     hook_name="${1}"
     has_hook=$(git::exist_hook "${hook_name}")
     if [ "${has_hook}" -eq 1 ]; then
-        [ -e .git/hooks ] && cp -rf "${ZSH_GIT_ALIASES_HOOKS_PATH}/${hook_name}" .git/hooks/
+        [ -e .git/hooks ] && cp -rf "${ZSH_GIT_HOOKS_PATH}/${hook_name}" .git/hooks/
         message_success "copy hook ${hook_name}"
         return
     fi
