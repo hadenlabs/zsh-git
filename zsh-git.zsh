@@ -14,7 +14,7 @@
 
 ZSH_GIT_ROOT_PATH=$(dirname "${0}")
 export ZSH_GIT_SRC_PATH="${ZSH_GIT_ROOT_PATH}/core"
-export ZSH_GIT_HOOKS_PATH="${ZSH_GIT_SRC_PATH}/git/hooks/"
+export ZSH_GIT_HOOKS_PATH="${ZSH_GIT_ROOT_PATH}/git/hooks/"
 export ZSH_GIT_REGEX_IS_HOOK="^(prepare-commit-msg)"
 export ZSH_GIT_REGEX_DOMAIN_ENABLED="(github.com|bitbucket.org)"
 
