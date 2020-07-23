@@ -1,14 +1,14 @@
 zsh-git
 =======
 
-Functions and tools git with zsh
+tmux install and tools for zsh
 
 |Build Status| |GitHub issues| |GitHub license|
 
-:Version: 0.0.0
+:Version: 0.1.0
 :Web: https://github.com/luismayta/zsh-git
-:Download: http://github.com/luismayta/zsh-git
-:Source: http://github.com/luismayta/zsh-git
+:Download: https://github.com/luismayta/zsh-git
+:Source: https://github.com/luismayta/zsh-git
 :Keywords: zsh-git
 
 .. contents:: Table of Contents:
@@ -167,11 +167,13 @@ Made with :coffee: and :pizza: by `Luis Mayta`_ and `equipindustry`_.
 .. _`PGP`: https://keybase.io/luismayta/pgp_keys.asc
 
 .. |Build Status| image:: https://travis-ci.org/luismayta/zsh-git.svg
-    :target: https://travis-ci.org/luismayta/zsh-git
+   :target: https://travis-ci.org/luismayta/zsh-git
 .. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-git.svg
-    :target: https://github.com/luismayta/zsh-git/issues
+   :target: https://github.com/luismayta/zsh-git/issues
 .. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
-    :target: LICENSE
+   :target: LICENSE
+.. |Fossa| image:: https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-git.svg?type=shield
+   :target: https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-git?ref=badge_shield
 
 .. Team:
 .. |Luis Mayta| image:: https://github.com/luismayta.png?size=100
