@@ -36,6 +36,9 @@ source "${ZSH_GIT_SRC_PATH}"/git.zsh
 source "${ZSH_GIT_SRC_PATH}"/gitflow.zsh
 
 # shellcheck source=/dev/null
+source "${ZSH_GIT_SRC_PATH}"/standup.zsh
+
+# shellcheck source=/dev/null
 source "${ZSH_GIT_SRC_PATH}"/alias.zsh
 
 
