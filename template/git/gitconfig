@@ -1,0 +1,172 @@
+[user]
+    name = "@slovacus"
+    email = "slovacus@gmail.com"
+
+[core]
+    autocrlf = input
+    excludesfile = ~/.gitignore
+    editor = nvim
+    preloadindex = true
+    fscache = true
+    filemode = true
+
+
+[alias]
+    ci = commit
+    ck = checkout
+    br = branch
+    lol = log --pretty=oneline --abbrev-commit --graph
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+    ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+    in = fetch --dry-run
+    out = push --dry-run
+    cm = commit
+    rm-orig = find ./ -name \"*.orig\" | xargs rm
+    st = status
+	lastchange = log -p --follow -n 1
+#IGNORING
+
+    # fix .gitignore
+    fixgitignore = !git rm -r --cached . && git add . && git commit -m \"Just a .gitignore fix \"
+
+    # Ignore files only locally
+    hide = update-index --assume-unchanged
+    unhide = update-index --no-assume-unchanged
+
+    # List all untracked files.
+    ls-untracked = ls-files --others
+
+    # this one is a MUST have
+    ls-ign  = ls-files --exclude-standard -o -i
+    ls-ignored = ls-files --others --ignored --exclude-standard
+
+    ignore = "!f() { echo \"$1\" >> \"${GIT_PREFIX}.gitignore\"; }; f"
+    # ignore=!([ ! -e .gitignore ] && touch .gitignore) | echo $1 >>.gitignore
+    #
+# other
+
+    showtool = "!f() { rev=$(git rev-parse \"${*:-HEAD}\"); git difftool $rev~1 $rev; }; f"
+
+    diff-file-last-commit = "!f() { \
+            project_root_dir=$(git root); \
+            echo finding full file path of $1 in $project_root_dir; \
+            filepath=$(find $project_root_dir -type f -name $1); \
+            echo full file path $filepath; \
+            last_modified_commit_hash=$(git rev-list -1 HEAD $filepath); \
+            echo last commit file modified $last_modified_commit_hash; \
+            git difftool $last_modified_commit_hash^ $filepath; \
+        }; f"
+
+    diffall = difftool -t meld --dir-diff
+
+[status]
+    submoduleSummary = true
+
+[pull]
+    rebase = true
+
+[push]
+    default = simple
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+    interactive = auto
+
+[color "branch"]
+    current = cyan bold
+    local = green bold
+    remote = red bold
+    upstream = red bold
+    plain = yellow reverse
+
+[color "diff"]
+    plain = "#888888"
+    meta = 11
+    frag = magenta bold
+    func = "#cc99cc"
+    old = red bold
+    new = green bold
+    commit = yellow bold
+    whitespace = red reverse
+
+[diff-so-fancy]
+    useUnicodeRuler = true
+
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+
+[color "status"]
+    header = normal
+    added = green bold
+    changed = yellow bold
+    untracked = cyan
+    branch = cyan bold
+    nobranch = bold ul blink 12
+    unmerged = red reverse bold
+
+[color "grep"]
+    context = "#888888"
+    filename = yellow bold
+    function = red
+    linenumber = magenta bold
+    match = green reverse bold
+    matchContext = yellow reverse bold
+    matchSelected = yellow bold blue
+    separator = red bold
+    selected = white
+
+
+[diff]
+    renames = copies
+    renameLimit = 30000
+
+    algorithm = patience
+
+    mnemonicprefix = true
+
+    noprefix = true
+
+    colorMoved = dimmed_zebra
+
+    tool = meld
+
+[difftool]
+    prompt = false
+
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+
+[merge]
+    stat = true
+    summary = true
+
+    # Include summaries of merged commits in newly created merge commit messages.
+    log = true
+
+    conflictstyle = diff3
+
+    tool = meld
+
+[gc]
+    # Minimize the number of files in .git/.
+    auto = 256
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[grep]
+    lineNumber = true
+
+    # # Allow extended regular expressions
+    # extendedRegexp = true
+
+    fullName = true
