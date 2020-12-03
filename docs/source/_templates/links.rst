@@ -24,7 +24,8 @@
 .. _Redis: http://redis.io
 .. _ApacheSolr: http://lucene.apache.org/solr
 .. _Vagrant: http://www.vagrantup.comhttp://bundler.io/
-.. _Github: https://github.com
+.. _Gitlab: https://github.com
+.. _Github: https://gitlab.com
 .. _Bitbucket: https://bitbucket.org
 .. _Terraform: https://www.terraform.io/
 .. _Wercker: https://www.wercker.com/
@@ -44,7 +45,6 @@
 .. _Pre Commit: https://github.com/observing/pre-commit
 .. _shellcheck: https://github.com/koalaman/shellcheck
 .. _pyenv: https://github.com/pyenv/pyenv
-.. _tmuxinator: https://github.com/tmuxinator/tmuxinator
 .. _Gherkin: https://github.com/cucumber/cucumber/wiki/Gherkin
 .. _Behave: http://pythonhosted.org/behave/
 
