@@ -1,7 +1,7 @@
 zsh-git
 =======
 
-tmux install and tools for zsh
+git install and tools for zsh
 
 |Build Status| |GitHub issues| |GitHub license|
 
