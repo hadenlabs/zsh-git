@@ -170,7 +170,7 @@ function git::internal::gff::publish {
     git push origin "${branch_name}"
 }
 
-function git::internall::gff::sync {
+function git::internal::gff::sync {
     if [ -z "$(git::internal::repository::remote::url origin)" ]; then
         return
     fi
