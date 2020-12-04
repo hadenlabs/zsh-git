@@ -21,6 +21,6 @@ function git::pkg::main::factory {
     source "${ZSH_GIT_PATH}"/pkg/alias.zsh
 }
 
-git::dependences::check
-
 git::pkg::main::factory
+
+git::dependences::check
