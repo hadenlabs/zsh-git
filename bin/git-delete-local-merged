@@ -13,7 +13,7 @@ git-delete-local-merged() {
   local branches base_branch
   base_branch="$(git config --get "gitflow.branch.master" || echo 'master')"
   _log "Removing merged branches..."
-  branches="$(git branch --merged | grep -v "^\*" | grep -v '${base_branch}' | tr -d '\n')"
+  branches="$(git branch --merged | grep -v "^\*" | grep -v "${base_branch}" | tr -d '\n')"
   [ -n "$branches" ] && echo "$branches" | xargs git branch -d
 
   _log "Removing squashed and merged branches..."
@@ -21,7 +21,7 @@ git-delete-local-merged() {
     base="$(git merge-base "${base_branch}" "$branch")"
     hash="$(git rev-parse "$branch^{tree}")"
     commit="$(git commit-tree "$hash" -p "$base" -m _)"
-    [[ $(git cherry master "$commit") == "-"* ]] && git branch -D "$branch"
+    [[ $(git cherry "${base_branch}" "$commit") == "-"* ]] && git branch -D "$branch"
   done
 }
 
