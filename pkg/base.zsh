@@ -37,7 +37,7 @@ function gff {
     action_excluded=$(printf "%s\\n" "${action_to_skip[@]}" | grep -c "^${action}")
     branch_eq_action=$(printf "%s" "${branch_name}" | grep -c "${action}")
 
-    gitflow::setup
+    git::internal::gitflow::setup
 
     if [ -n "${action}" ] && [ "${action_excluded}" -eq 0 ] && [ "${branch_eq_action}" -eq 1 ]; then
         git::internal::gff::publish
