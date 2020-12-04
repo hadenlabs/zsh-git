@@ -1,5 +1,5 @@
-#!/bin/sh
-# git-sync
+#!/bin/bash
+# git-delete-local-merged
 # Author: Carlos Alexandro Becker
 # Created: 2020
 
@@ -11,7 +11,7 @@ _log() {
 git-delete-local-merged() {
   # shellcheck disable=SC2039
   local branches base_branch
-  base_branch=$(git config --get "gitflow.branch.master") || 'master'
+  base_branch="$(git config --get "gitflow.branch.master" || echo 'master')"
   _log "Removing merged branches..."
   branches="$(git branch --merged | grep -v "^\*" | grep -v '${base_branch}' | tr -d '\n')"
   [ -n "$branches" ] && echo "$branches" | xargs git branch -d
