@@ -3,11 +3,17 @@
 
 # editgitconfig edit settings for git
 function editgit {
+    local path_git
     if [ -z "${EDITOR}" ]; then
         message_warning "it's neccesary the var EDITOR"
         return
     fi
-    "${EDITOR}" "$(git-root)/.git/config"
+    path_git="$(git-root)"
+    if [ -z "${path_git}" ]; then
+        message_warning "it's not is path of git"
+        return
+    fi
+    "${EDITOR}" "${path_git}/.git/config"
 }
 
 # editgitconfigglobal edit settings for git global
