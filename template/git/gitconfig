@@ -10,7 +10,6 @@
     fscache = true
     filemode = true
 
-
 [alias]
     ci = commit
     ck = checkout
@@ -23,7 +22,7 @@
     cm = commit
     rm-orig = find ./ -name \"*.orig\" | xargs rm
     st = status
-	lastchange = log -p --follow -n 1
+    lastchange = log -p --follow -n 1
 #IGNORING
 
     # fix .gitignore
