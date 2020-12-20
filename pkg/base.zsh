@@ -16,14 +16,6 @@ function git::dependences::check {
     if [ -z "${GITHUB_USER}" ]; then
         message_warning "You should set 'git config --global github.user'."
     fi
-
-    if [ -z "${BITBUCKET_USER}" ]; then
-        message_warning "You should set 'git config --global bitbucket.user'."
-    fi
-
-    if [ -z "${GITLAB_USER}" ]; then
-        message_warning "You should set 'git config --global gitlab.user'."
-    fi
 }
 
 function gff {
@@ -48,6 +40,17 @@ function gff {
 
     if [ -n "${action}" ] && [ "${action_excluded}" -eq 1 ]; then
         git flow feature "${action}"
+    fi
+
+}
+
+function git::pkg::config::setup {
+    if [ -n "${GIT_USER_NAME}" ]; then
+        git config --global user.name "${GIT_USER_NAME}"
+    fi
+
+    if [ -n "${GIT_USER_EMAIL}" ]; then
+        git config --global user.email "${GIT_USER_EMAIL}"
     fi
 
 }
