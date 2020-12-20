@@ -113,9 +113,7 @@ function git::internal::hook::factory {
 }
 
 function git::internal::branch::name {
-    local branch_name
-    branch_name="$(git symbolic-ref --short HEAD)"
-    echo "${branch_name}"
+    git symbolic-ref --short HEAD
 }
 
 function git::internal::branch::task_name {
