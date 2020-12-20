@@ -23,4 +23,6 @@ function git::pkg::main::factory {
 
 git::pkg::main::factory
 
+git::pkg::config::setup
+
 git::dependences::check
