@@ -64,3 +64,7 @@ function git::pkg::config::setup {
     fi
 
 }
+
+function git::sync {
+    rsync -avhP  "${GIT_CONF_PATH}/" "${HOME}/"
+}
