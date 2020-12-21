@@ -58,6 +58,10 @@ function git::pkg::config::setup {
         git config --global user.email "${GIT_USER_EMAIL}"
     fi
 
+    if [ -n "${GITHUB_USER}" ]; then
+        git config --global github.user "${GITHUB_USER}"
+    fi
+
     if [ -n "${GITHUB_TOKEN}" ]; then
         git config --global \
             url."https://${GITHUB_TOKEN}:@github.com/".insteadOf "https://github.com/"
