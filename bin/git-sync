@@ -34,10 +34,11 @@ _push_to_fork() {
   local branch remote
   remote="$1"
   branch="$2"
-  if ! [ "$remote" = "origin" ]; then
-    _log "Pushing it to origin/$branch..."
-    git push origin "$branch" | _prefixed
+  if [ "$remote" = "origin" ]; then
+      return
   fi
+  _log "Pushing it to origin/$branch..."
+  git push origin "$branch" --no-verify | _prefixed
 }
 
 git-sync() {
