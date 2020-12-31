@@ -54,10 +54,6 @@ function git::pkg::config::setup {
         git config --global user.email "${GIT_USER_EMAIL}"
     fi
 
-    if [ -n "${GIT_USER_EMAIL}" ]; then
-        git config --global user.email "${GIT_USER_EMAIL}"
-    fi
-
     if [ -n "${GITHUB_USER}" ]; then
         git config --global github.user "${GITHUB_USER}"
     fi
