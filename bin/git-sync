@@ -25,7 +25,8 @@ _merge_locally() {
   remote="$1"
   branch="$2"
   _log "Merging $remote/$branch locally..."
-  git fetch "$remote" | _prefixed
+  git fetch "${remote}" | _prefixed
+  git fetch "${remote}" --tags | _prefixed
   git merge --no-edit "$remote/$branch" | _prefixed
 }
 
@@ -39,6 +40,7 @@ _push_to_fork() {
   fi
   _log "Pushing it to origin/$branch..."
   git push origin "$branch" --no-verify | _prefixed
+  git push origin --tags --no-verify | _prefixed
 }
 
 git-sync() {
