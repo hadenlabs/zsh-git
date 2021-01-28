@@ -14,6 +14,7 @@ function git::pkg::main::factory {
         source "${ZSH_GIT_PATH}"/pkg/linux.zsh
       ;;
     esac
+
     # shellcheck source=/dev/null
     source "${ZSH_GIT_PATH}"/pkg/helper.zsh
 
