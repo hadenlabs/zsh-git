@@ -14,7 +14,7 @@
 
 # zsh-git
 
-[![Build Status](https://travis-ci.org/hadenlabs/zsh-git.svg?branch=main)](https://travis-ci.org/hadenlabs/zsh-git) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-git.svg)](https://github.com/hadenlabs/zsh-git/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-git.svg)](https://travis-ci.org/hadenlabs/zsh-git/releases)
+[![Build Status](https://travis-ci.org/hadenlabs/zsh-git.svg?branch=main)](https://travis-ci.org/hadenlabs/zsh-git) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-git.svg)](https://github.com/hadenlabs/zsh-git/issues) [![Downloads](https://img.shields.io/github/downloads/hadenlabs/zsh-git/total.svg)](https://github.com/hadenlabs/zsh-git/releases) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-git.svg)](https://travis-ci.org/hadenlabs/zsh-git/releases)
 
 zsh-git plugin for zsh.
 
