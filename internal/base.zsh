@@ -36,3 +36,10 @@ function git::internal::gitflow::install {
     fi
     brew install git-flow
 }
+
+function git::internal::provision::hooks::sync {
+    if [ ! -e "${GIT_PROVISION_HOOKS_PATH}" ]; then
+        return
+    fi
+    rsync -avP "${ZSH_GIT_HOOKS_PATH}/" "${GIT_PROVISION_HOOKS_PATH}/"
+}

@@ -66,6 +66,7 @@ function git::pkg::config::setup {
 }
 
 function git::hooks::sync {
+    git::internal::provision::hooks::sync
     git::internal::hook::factory
 }
 
