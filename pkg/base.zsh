@@ -65,6 +65,10 @@ function git::pkg::config::setup {
 
 }
 
+function git::hooks::sync {
+    git::internal::hook::factory
+}
+
 function git::sync {
     rsync -avhP  "${GIT_CONF_PATH}/" "${HOME}/"
 }
