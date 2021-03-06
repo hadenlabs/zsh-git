@@ -46,15 +46,15 @@ function gff {
 
 function git::pkg::config::setup {
 
-    if [ -n "${GIT_USER_NAME}" ]; then
+    if [ -n "${GIT_USER_NAME}" ] && [ -z "$(git config --global user.name)" ]; then
         git config --global user.name "${GIT_USER_NAME}"
     fi
 
-    if [ -n "${GIT_USER_EMAIL}" ]; then
+    if [ -n "${GIT_USER_EMAIL}" ] && [ -z "$(git config --global user.email)" ]; then
         git config --global user.email "${GIT_USER_EMAIL}"
     fi
 
-    if [ -n "${GITHUB_USER}" ]; then
+    if [ -n "${GITHUB_USER}" ] && [ -z "$(git config --global github.user)" ]; then
         git config --global github.user "${GITHUB_USER}"
     fi
 
