@@ -1,8 +1,9 @@
 #
 # See ./docs/contributing.md
 #
-#
+
 OS := $(shell uname)
+
 .PHONY: help
 .DEFAULT_GOAL := help
 
@@ -25,21 +26,23 @@ PROJECT := zsh-git
 PROJECT_PORT := 3000
 
 PYTHON_VERSION=3.8.0
-NODE_VERSION=12.14.1
+NODE_VERSION=14.15.5
 PYENV_NAME="${PROJECT}"
+GIT_IGNORES:=python,node,go
+GI:=gi
 
 # Configuration.
 SHELL ?=/bin/bash
 ROOT_DIR=$(shell pwd)
 MESSAGE:=🍺️
-MESSAGE_HAPPY:="Done! ${MESSAGE}, Now Happy Hacking"
+MESSAGE_HAPPY?:="Done! ${MESSAGE}, Now Happy Hacking"
 SOURCE_DIR=$(ROOT_DIR)
 PROVISION_DIR:=$(ROOT_DIR)/provision
 DOCS_DIR:=$(ROOT_DIR)/docs
-README_TEMPLATE:=$(PROVISION_DIR)/templates/README.md.gotmpl
+README_TEMPLATE:=$(PROVISION_DIR)/templates/README.md.tmpl
 
 export README_FILE ?= README.md
-export README_YAML ?= README.yaml
+export README_YAML ?= provision/generators/README.yaml
 export README_INCLUDES ?= $(file://$(shell pwd)/?type=text/plain)
 
 FILE_README:=$(ROOT_DIR)/README.md
@@ -70,6 +73,7 @@ help:
 	@echo ''
 	@make docker.help
 	@make docs.help
+	@make git.help
 	@make test.help
 	@make utils.help
 	@make python.help
@@ -87,6 +91,7 @@ setup:
 	@cp -rf provision/git/hooks/prepare-commit-msg .git/hooks/
 	@[ -e ".env" ] || cp -rf .env.example .env
 	make yarn.setup
+	make git.setup
 	@echo ${MESSAGE_HAPPY}
 
 environment:
