@@ -14,15 +14,15 @@
 
 # zsh-git
 
-[![Build Status](https://travis-ci.org/hadenlabs/zsh-git.svg?branch=main)](https://travis-ci.org/hadenlabs/zsh-git) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-git.svg)](https://github.com/hadenlabs/zsh-git/issues) [![Downloads](https://img.shields.io/github/downloads/hadenlabs/zsh-git/total.svg)](https://github.com/hadenlabs/zsh-git/releases) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-git.svg)](https://travis-ci.org/hadenlabs/zsh-git/releases)
+[![Build Status](https://travis-ci.org/hadenlabs/zsh-git.svg?branch=main)](https://travis-ci.org/hadenlabs/zsh-git) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-git.svg)](https://github.com/hadenlabs/zsh-git/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-git.svg)](https://travis-ci.org/hadenlabs/zsh-git/releases)
 
 zsh-git plugin for zsh.
 
----
-
 This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) plugins of zsh.
 
-It's 100% Open Source and licensed under the [MIT](LICENSE).
+## :page_facing_up: License
+
+MIT is an open-sourced software licensed under the [MIT license](LICENSE.md).
 
 ## Requirements
 
@@ -31,7 +31,6 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 ```{.sourceCode .bash}
 https://github.com/luismayta/zsh-core
 https://github.com/luismayta/zsh-notify
-https://github.com/luismayta/zsh-functions
 ```
 
 ## Installation
@@ -78,7 +77,7 @@ make setup
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/hadenlabs/zsh-git/issues), send us an [email][email] or join our [Slack Community][slack].
+File a GitHub [issue](https://github.com/hadenlabs/zsh-git/issues), send us an [email](email) or join our [Slack Community](slack).
 
 ## Contributing
 
@@ -102,25 +101,11 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 ### Versioning
 
-Releases are managed using github release feature. We use \[Semantic Versioning\](<http://semver.org>) for all the releases. Every change made to the code base will be referred to in the release notes (except for cleanups and refactorings).
+Releases are managed using github release feature. We use [Semantic Versioning](http://semver.org) for all the releases. Every change made to the code base will be referred to in the release notes (except for cleanups and refactorings).
 
 ## Copyright
 
 Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
-
-## License
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-The MIT License (MIT)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Source: <https://opensource.org/licenses/MIT>
 
 ## Trademarks
 
@@ -128,12 +113,4 @@ All other trademarks referenced herein are the property of their respective owne
 
 ## About
 
-This project is maintained and funded by [Hadenlabs][https://hadenlabs.com]. Like it? Please let us know at <support@hadenlabs.com>
-
-### Contributors
-
-| [![Luis Mayta][luismayta_avatar]][luismayta_homepage]<br/>[Luis Mayta][luismayta_homepage] |
-| ------------------------------------------------------------------------------------------ |
-
-[luismayta_homepage]: https://github.com/luismayta
-[luismayta_avatar]: https://github.com/luismayta.png?size=150
+This project is maintained and funded by [Hadenlabs](https://hadenlabs.com). Like it? Please let us know at <support@hadenlabs.com>
