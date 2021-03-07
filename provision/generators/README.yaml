@@ -33,9 +33,9 @@ github_repo: hadenlabs/zsh-git
 
 # Badges to display
 badges:
-  - name: 'Build Status'
-    image: 'https://travis-ci.org/hadenlabs/zsh-git.svg?branch=main'
-    url: 'https://travis-ci.org/hadenlabs/zsh-git'
+  - name: Lint
+    image: https://github.com/hadenlabs/zsh-git/actions/workflows/lint.yml/badge.svg?branch=develop
+    url: https://github.com/hadenlabs/zsh-git/actions
   - name: 'Issues'
     image: 'https://img.shields.io/github/issues/hadenlabs/zsh-git.svg'
     url: 'https://github.com/hadenlabs/zsh-git/issues'
@@ -51,7 +51,7 @@ requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  ```{.sourceCode .bash}
+  ```{bash}
   https://github.com/luismayta/zsh-core
   https://github.com/luismayta/zsh-notify
   ```
@@ -66,3 +66,6 @@ usage: |-
   ```bash
   make setup
   ```
+
+examples:
+  - 'docs/examples/common.md'
