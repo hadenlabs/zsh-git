@@ -14,11 +14,11 @@
 
 # zsh-git
 
-[![Build Status](https://travis-ci.org/hadenlabs/zsh-git.svg?branch=main)](https://travis-ci.org/hadenlabs/zsh-git) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-git.svg)](https://github.com/hadenlabs/zsh-git/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-git.svg)](https://travis-ci.org/hadenlabs/zsh-git/releases)
+[![Lint](https://github.com/hadenlabs/zsh-git/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/hadenlabs/zsh-git/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-git.svg)](https://github.com/hadenlabs/zsh-git/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-git.svg)](https://travis-ci.org/hadenlabs/zsh-git/releases)
 
 zsh-git plugin for zsh.
 
-This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) plugins of zsh.
+This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) examples of readme.
 
 ## :page_facing_up: License
 
@@ -28,7 +28,7 @@ MIT is an open-sourced software licensed under the [MIT license](LICENSE.md).
 
 This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-```{.sourceCode .bash}
+```{bash}
 https://github.com/luismayta/zsh-core
 https://github.com/luismayta/zsh-notify
 ```
@@ -73,6 +73,10 @@ to your `.zshrc` where you're adding your other plugins.
 make setup
 ```
 
+## :page_facing_up: Examples
+
+### common
+
 ## Help
 
 **Got a question?**
@@ -114,3 +118,7 @@ All other trademarks referenced herein are the property of their respective owne
 ## About
 
 This project is maintained and funded by [Hadenlabs](https://hadenlabs.com). Like it? Please let us know at <support@hadenlabs.com>
+
+## Don't forget to 🌟 Star 🌟 the repo if you like this GitHub Action
+
+[Your feedback is appreciated](https://github.com/hadenlabs/zsh-git/issues)
