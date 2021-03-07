@@ -22,7 +22,7 @@
 {{ if has (ds "config") "description" }} {{(ds "config").description }} {{ end }}
 
 {{ if has (ds "config") "company" }}
-This project is part of our comprehensive [{{ printf (ds "config").company.name}}]({{ printf (ds "config").company.url}}) plugins of zsh.
+This project is part of our comprehensive [{{ printf (ds "config").company.name}}]({{ printf (ds "config").company.url}}) examples of readme.
 {{end}}
 
 {{ if has (ds "config") "license" }}
@@ -49,21 +49,17 @@ This project is part of our comprehensive [{{ printf (ds "config").company.name}
 
 {{ if has (ds "config") "introduction" }}
 
-## Introduction
+## :page_facing_up: Introduction
 
 {{ (ds "config").introduction -}} {{ end }}
 
 
 {{ if has (ds "config") "todo" }}
 
-## To do
+## :page_facing_up: TODO
 
 {{ range $todo := (ds "config").todo }}
-    {{- if $todo.done }}
-        {{ printf "- [x] [%s](%s)" $todo.name $todo.url }}
-    {{ else -}}
-        {{ printf "- [] [%s](%s)" $todo.name $todo.url }}
-    {{ end }}
+{{ printf "* [%s](%s)" $todo.name $todo.url }}
 {{ end }}
 {{ end }}
 
@@ -193,3 +189,7 @@ This project is maintained and funded by [{{ printf (ds "config").copyright.name
 {{ end }}
 
 {{ end }}
+
+## Don't forget to 🌟 Star 🌟 the repo if you like this GitHub Action
+
+[Your feedback is appreciated]({{ printf "https://github.com/%s/issues" (ds "config").github_repo}})
