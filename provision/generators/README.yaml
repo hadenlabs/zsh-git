@@ -7,18 +7,6 @@
 # Name of this project
 name: zsh-git
 
-company:
-  name: hadenlabs
-  description: |-
-    company labs
-  url: https://hadenlabs.com
-  github: https://github.com/hadenlabs
-  email: support@hadenlabs.com
-
-copyright:
-  name: Hadenlabs
-  url: https://hadenlabs.com
-
 email:
   support: support@hadenlabs.com
 
@@ -26,22 +14,31 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: 'MIT'
+license: 'LGPL-3.0'
 
 # Canonical GitHub repo
 github_repo: hadenlabs/zsh-git
 
 # Badges to display
 badges:
+  - name: Latest Release
+    image: https://img.shields.io/github/release/hadenlabs/zsh-git
+    url: https://github.com/hadenlabs/zsh-git/releases
   - name: Lint
-    image: https://github.com/hadenlabs/zsh-git/actions/workflows/lint.yml/badge.svg?branch=develop
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-git/lint-code
     url: https://github.com/hadenlabs/zsh-git/actions
-  - name: 'Issues'
-    image: 'https://img.shields.io/github/issues/hadenlabs/zsh-git.svg'
-    url: 'https://github.com/hadenlabs/zsh-git/issues'
-  - name: 'Latest Release'
-    image: 'https://img.shields.io/github/release/hadenlabs/zsh-git.svg'
-    url: 'https://travis-ci.org/hadenlabs/zsh-git/releases'
+  - name: Issues
+    image: https://img.shields.io/github/issues/hadenlabs/zsh-git
+    url: https://github.com/hadenlabs/zsh-git/issues
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    url: https://keepachangelog.com
+  - name: Beacon
+    image: https://ga-beacon.appspot.com/G-MZEK48EGE8/zsh-git/readme
+    url: https://github.com/hadenlabs/zsh-git
 
 # Short description of this project
 description: |-
@@ -51,10 +48,7 @@ requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  ```{bash}
-  https://github.com/luismayta/zsh-core
-  https://github.com/luismayta/zsh-notify
-  ```
+  * [zsh-core](https://github.com/hadenlabs/zsh-core)
 
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
@@ -69,3 +63,4 @@ usage: |-
 
 examples:
   - 'docs/examples/common.md'
+  - 'docs/functions.md'
