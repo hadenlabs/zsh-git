@@ -48,7 +48,7 @@ repos:
       - id: fix-encoding-pragma
       - id: sort-simple-yaml
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: 5a1cf2bd39307f6ea1ae8c3fa708a399ae74f6eb
+    rev: 6c173538c37aa802949cae5ff487d702319ba80a
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
