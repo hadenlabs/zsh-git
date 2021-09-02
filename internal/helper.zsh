@@ -14,6 +14,20 @@ function git::internal::git::branch::name {
 }
 
 #
+# return name branch develop
+#
+function git::internal::gitflow::branch::develop {
+    git config --local gitflow.branch.develop || echo 'develop'
+}
+
+#
+# return name branch main
+#
+function git::internal::gitflow::branch::base {
+    git config --local gitflow.branch.master || echo 'main'
+}
+
+#
 # Bool validate if exist branch develop
 #
 function git::internal::gitflow::validate::exist::develop {
@@ -96,7 +110,7 @@ function git::internal::branch::task_name {
 }
 
 function git::internal::branch::is_develop {
-    if [ "$(git::internal::git::branch::name)" = "develop" ]; then
+if [ "$(git::internal::git::branch::name)" = "$(git::internal::gitflow::branch::develop)" ]; then
         echo 1
         return
     fi
@@ -116,8 +130,8 @@ function git::internal::repository::remote::url {
 #  return true when origign is different to upstream
 function git::internal::repository::fork::private {
     local domain_origin domain_upstream
-    domain_origin=$(echo "$(git::internal::repository::remote::url origin)" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
-    domain_upstream=$(echo "$(git::internal::repository::remote::url upstream)" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
+    domain_origin=$("$(git::internal::repository::remote::url origin)" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
+    domain_upstream=$("$(git::internal::repository::remote::url upstream)" | grep -Eo "${ZSH_GIT_REGEX_DOMAIN_ENABLED}")
     if [ -z "${domain_upstream}" ]; then
         echo 0
         return
@@ -144,10 +158,10 @@ function git::internal::gff::sync {
     if [ -z "$(git::internal::repository::remote::url origin)" ]; then
         return
     fi
-    message_info "starting sync branchs"
+    message_info "starting sync branches"
     if [ "$(git::internal::branch::is_develop)" -eq 0 ]; then
-        git checkout develop
+        git checkout "$(git::internal::gitflow::branch::develop)"
     fi
     git-sync
-    message_success "finish sync branchs"
+    message_success "finish sync branches"
 }
