@@ -1,3 +1,13 @@
+<!-- Space: Projects -->
+<!-- Parent: Project -->
+<!-- Title: Installation Antigen ZshGoenv -->
+<!-- Label: ZshGoenv -->
+<!-- Label: Project -->
+<!-- Label: Installation -->
+<!-- Label: Antigen -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
+
 ### [antigen](https://github.com/zsh-users/antigen) users
 
 If you're using [Antigen](https://github.com/zsh-users/antigen), install this plugin by doing the following:
