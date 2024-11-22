@@ -1,6 +1,6 @@
 [user]
-    name = "@slovacus"
-    email = "slovacus@gmail.com"
+	name = Luis Mayta
+	email = luis@hadenlabs.com
 
 [core]
     autocrlf = input
@@ -9,6 +9,9 @@
     preloadindex = true
     fscache = true
     filemode = true
+
+[github]
+	user = luismayta
 
 [alias]
     ci = commit
