@@ -5,7 +5,7 @@
 # so that jira, github, gitlab can associate it with a ticket
 
 if [ -z "$BRANCHES_TO_SKIP" ]; then
-    BRANCHES_TO_SKIP=(main master develop test)
+    BRANCHES_TO_SKIP=(main master develop dev test)
 fi
 
 REGEX_VALIDATION="^[0-9]+$"
