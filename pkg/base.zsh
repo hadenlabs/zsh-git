@@ -65,11 +65,7 @@ function git::pkg::config::setup {
 
 }
 
-function git::hooks::sync {
-    git::internal::provision::hooks::sync
-    git::internal::hook::factory
-}
-
 function git::sync {
-    rsync -avhP  "${GIT_CONF_PATH}/" "${HOME}/"
+    git::internal::provision::hooks::sync
+    git::internal::sync
 }

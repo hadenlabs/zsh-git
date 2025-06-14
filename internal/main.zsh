@@ -21,7 +21,8 @@ function git::internal::main::factory {
 
 git::internal::main::factory
 
-if ! type -p git > /dev/null; then git::internal::git::install; fi
-if ! type -p hub > /dev/null; then git::internal::hub::install; fi
+if ! core::exists git; then core::install git; fi
+if ! core::exists hub; then core::install hub; fi
+if ! core::exists rsync; then core::install rsync; fi
+if ! core::exists git-flow; then core::install git-flow; fi
 if ! type -p git-standup > /dev/null; then git::internal::standup::install; fi
-if ! type -p git-flow > /dev/null; then git::internal::gitflow::install; fi

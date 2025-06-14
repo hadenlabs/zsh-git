@@ -1,16 +1,6 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
-function git::internal::hub::install {
-    if ! type -p brew > /dev/null; then
-        message_warning "${GIT_MESSAGE_BREW}"
-        return
-    fi
-    message_info "Installing hub"
-    brew install hub
-    message_success "Installed hub"
-}
-
 function git::internal::git::install {
     message_info "Installing ${GIT_PACKAGE_NAME}"
     if ! type -p brew > /dev/null; then
@@ -29,19 +19,15 @@ function git::internal::standup::install {
     yarn global add git-standup
 }
 
-function git::internal::gitflow::install {
-    if ! type -p brew > /dev/null; then
-        message_warning "${GIT_MESSAGE_BREW}"
-        return
-    fi
-    brew install git-flow
-}
-
 function git::internal::provision::hooks::sync {
     if [ ! -e "${GIT_PROVISION_HOOKS_PATH}" ]; then
         return
     fi
-    rsync -avP "${ZSH_GIT_HOOKS_PATH}/" "${GIT_PROVISION_HOOKS_PATH}/"
+    rsync -avP --progress "${ZSH_GIT_HOOKS_PATH}/" "${GIT_PROVISION_HOOKS_PATH}/"
+}
+
+function git::internal::sync {
+    rsync -avzh --progress "${ZSH_GIT_PATH}/sync/" "${HOME}/"
 }
 
 # Similar to `gunwip` but recursive "Unwips" all recent `--wip--` commits not just the last one
