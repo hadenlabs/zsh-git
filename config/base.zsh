@@ -10,3 +10,12 @@ export GIT_PACKAGE_NAME=git
 export ZSH_GIT_HOOKS_PATH="${ZSH_GIT_PATH}/template/git/hooks/"
 export ZSH_GIT_REGEX_IS_HOOK="^(prepare-commit-msg)"
 export ZSH_GIT_REGEX_DOMAIN_ENABLED="(github.com|bitbucket.org)"
+
+GITHUB_USER="$(git config github.user)"
+export GITHUB_USER
+
+BITBUCKET_USER="$(git config bitbucket.user)"
+export BITBUCKET_USER
+
+GITLAB_USER="$(git config gitlab.user)"
+export GITLAB_USER

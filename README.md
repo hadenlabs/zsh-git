@@ -12,7 +12,7 @@
 
   -->
 
-[![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-git)](https://github.com/hadenlabs/zsh-git/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-git/lint-code)](https://github.com/hadenlabs/zsh-git/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-git)](https://github.com/hadenlabs/zsh-git/issues) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange)](https://keepachangelog.com)
+[![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-git)](https://github.com/hadenlabs/zsh-git/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-git/lint-code)](https://github.com/hadenlabs/zsh-git/actions?workflow=lint-code) [![CI](https://img.shields.io/github/workflow/status/hadenlabs/zsh-git/ci)](https://github.com/hadenlabs/zsh-git/actions?workflow=ci) [![Test](https://img.shields.io/github/workflow/status/hadenlabs/zsh-git/test)](https://github.com/hadenlabs/zsh-git/actions?workflow=test) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange)](https://keepachangelog.com)
 
 # zsh-git
 
@@ -135,7 +135,7 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ## Copyright
 
-Copyright © 2018-2024 [Hadenlabs](https://hadenlabs.com)
+Copyright © 2018-2025 [Hadenlabs](https://hadenlabs.com)
 
 ## Trademarks
 

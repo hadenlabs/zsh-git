@@ -11,7 +11,7 @@ email:
   support: support@hadenlabs.com
 
 # Logo for this project
-#logo: docs/logo.png
+# logo: docs/logo.png
 
 # License of this project
 license: "LGPL-3.0"
@@ -26,10 +26,16 @@ badges:
     url: https://github.com/hadenlabs/zsh-git/releases
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-git/lint-code
-    url: https://github.com/hadenlabs/zsh-git/actions
-  - name: Issues
-    image: https://img.shields.io/github/issues/hadenlabs/zsh-git
-    url: https://github.com/hadenlabs/zsh-git/issues
+    url: https://github.com/hadenlabs/zsh-git/actions?workflow=lint-code
+  - name: CI
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-git/ci
+    url: https://github.com/hadenlabs/zsh-git/actions?workflow=ci
+  - name: Test
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-git/test
+    url: https://github.com/hadenlabs/zsh-git/actions?workflow=test
+  - name: pre-commit
+    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+    url: https://github.com/pre-commit/pre-commit
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
@@ -52,11 +58,11 @@ installation:
   - "docs/include/installation/antigen.md"
   - "docs/include/installation/antibody.md"
 
-usages:
-  - docs/usage.md
-
 include:
   - "docs/functions.md"
+
+usages:
+  - docs/usage.md
 
 examples:
   - "docs/examples/common.md"

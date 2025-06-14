@@ -9,14 +9,10 @@
 #  - git: https://git-scm.com/
 #
 # Authors:
-#   Luis Mayta <slovacus@gmail.com>
+#   Luis Mayta <luis@hadenlabs.com>
 #
 
 ZSH_GIT_PATH=$(dirname "${0}")
-
-GITHUB_USER="$(git config github.user)"
-BITBUCKET_USER="$(git config bitbucket.user)"
-GITLAB_USER="$(git config gitlab.user)"
 
 export PATH="${ZSH_GIT_PATH}/bin:${PATH}"
 
