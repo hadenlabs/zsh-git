@@ -11,14 +11,6 @@ function git::internal::git::install {
     message_success "Installed ${GIT_PACKAGE_NAME}"
 }
 
-function git::internal::standup::install {
-    if ! type -p yarn > /dev/null; then
-        message_warning "please use antibody bundle luismayta/zsh-nvm branch:develop"
-        return
-    fi
-    yarn global add git-standup
-}
-
 function git::internal::provision::hooks::sync {
     if [ ! -e "${GIT_PROVISION_HOOKS_PATH}" ]; then
         return

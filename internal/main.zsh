@@ -25,4 +25,3 @@ if ! core::exists git; then core::install git; fi
 if ! core::exists hub; then core::install hub; fi
 if ! core::exists rsync; then core::install rsync; fi
 if ! core::exists git-flow; then core::install git-flow; fi
-if ! core::exists git-standup; then git::internal::standup::install; fi
